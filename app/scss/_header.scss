@@ -48,7 +48,7 @@
         right: 0;
         left: 0;
         right: 0;
-        background-image: linear-gradient($midBlue, transparent); 
+        background-image: linear-gradient($lighterGolden, transparent); 
 
        
     }
@@ -73,7 +73,7 @@
             display: block;
             width: 2.5rem;
             height: 0.2rem;
-            background-color: $darkBlue;
+            background-color: $golden;
             transition: all 300ms ease-in-out;
             transform-origin: 0.4rem 0.15rem;
 
@@ -103,14 +103,14 @@
                 left: 0;
                 right: 0;
                 bottom: -3rem;
-                background: $midBlue;
+                background: $golden;
                 opacity: 0;
                 transition: opacity 400ms ease-in-out;
             }
 
             // ^ This is the line when hover 
             &:hover {
-               color: $blue;
+               color: $golden;
                &::before{ 
                 opacity: 1;
                }

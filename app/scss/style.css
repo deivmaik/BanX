@@ -133,9 +133,9 @@ a, a:visited, a:hover {
 
 button, .button {
   padding: 1rem 3rem;
-  background: -webkit-gradient(linear, left top, right top, from(#446491), to(#3F9FD4));
-  background: linear-gradient(90deg, #446491 0%, #3F9FD4 100%);
-  border: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#EDB541), to(#FFDC94));
+  background: linear-gradient(90deg, #EDB541 0%, #FFDC94 100%);
+  border: 1px solid #FAFAFA;
   border-radius: 5rem;
   cursor: pointer;
   color: #FFF;
@@ -200,8 +200,8 @@ button, .button {
   right: 0;
   left: 0;
   right: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4B89AC), to(transparent));
-  background-image: linear-gradient(#4B89AC, transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFE7B8), to(transparent));
+  background-image: linear-gradient(#FFE7B8, transparent);
 }
 
 .header nav {
@@ -220,7 +220,7 @@ button, .button {
   display: block;
   width: 2.5rem;
   height: 0.2rem;
-  background-color: #446491;
+  background-color: #EEB545;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   -webkit-transform-origin: 0.4rem 0.15rem;
@@ -251,14 +251,14 @@ button, .button {
   left: 0;
   right: 0;
   bottom: -3rem;
-  background: #4B89AC;
+  background: #EEB545;
   opacity: 0;
   -webkit-transition: opacity 400ms ease-in-out;
   transition: opacity 400ms ease-in-out;
 }
 
 .header__links a:hover {
-  color: #3F9FD4;
+  color: #EEB545;
 }
 
 .header__links a:hover::before {
