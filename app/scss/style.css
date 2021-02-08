@@ -101,6 +101,8 @@ a, a:visited, a:hover {
 }
 
 .container {
+  max-width: 110rem;
+  margin: 0 auto;
   padding-left: 2.4rem;
   padding-right: 2.4rem;
 }
@@ -249,7 +251,7 @@ button, .button {
   left: 0;
   right: 0;
   bottom: -3rem;
-  background: #3F9FD4;
+  background: #4B89AC;
   opacity: 0;
   -webkit-transition: opacity 400ms ease-in-out;
   transition: opacity 400ms ease-in-out;

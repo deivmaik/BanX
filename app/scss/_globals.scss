@@ -29,6 +29,8 @@ a, a:visited, a:hover {
 // spacing
 
 .container {
+    max-width: 110rem;
+    margin: 0 auto;
     padding-left: 2.4rem;
     padding-right: 2.4rem;
 }
