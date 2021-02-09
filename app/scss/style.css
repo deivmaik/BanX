@@ -133,8 +133,8 @@ a, a:visited, a:hover {
 
 button, .button {
   padding: 1rem 3rem;
-  background: -webkit-gradient(linear, left top, right top, from(#EDB541), to(#FFDC94));
-  background: linear-gradient(90deg, #EDB541 0%, #FFDC94 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#EDB541), to(#FFCA5C));
+  background: linear-gradient(90deg, #EDB541 0%, #FFCA5C 100%);
   border: 1px solid #FAFAFA;
   border-radius: 5rem;
   cursor: pointer;
@@ -208,7 +208,7 @@ button, .button {
   position: relative;
   background-color: #FFF;
   padding-top: 2.4rem;
-  padding-bottom: 2.4rem;
+  padding-bottom: 1.5rem;
 }
 
 .header__logo img {
@@ -273,6 +273,6 @@ button, .button {
 }
 
 .header > nav > button:hover {
-  opacity: 0.75;
+  opacity: 0.5;
 }
 /*# sourceMappingURL=style.css.map */
