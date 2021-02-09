@@ -31,8 +31,10 @@ a, a:visited, a:hover {
 .container {
     max-width: 110rem;
     margin: 0 auto;
-    padding-left: 2.4rem;
+    padding-top: 3.6rem;
     padding-right: 2.4rem;
+    padding-bottom: 3.6rem;
+    padding-left: 2.4rem;
 }
 
 // Flexbox classes
@@ -56,14 +58,22 @@ a, a:visited, a:hover {
 // Buttons 
 
 button, .button{
+    display: inline-block;
     padding: 1rem 3rem;
     background: linear-gradient(90deg, #EDB541 0%, #FFCA5C 100%);
     border: 1px solid #FAFAFA;
     border-radius: 5rem;
     cursor: pointer;
+    font-size: $font-small;
     color: $white;
     font-weight: bold;
+    transition: opacity 300ms ease-in-out;
+
+    &:hover{
+        opacity: 0.5;
+    }
 }
+
 
 
 // Visibility 
