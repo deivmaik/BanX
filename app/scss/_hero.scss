@@ -7,6 +7,7 @@
     // this is the media query for desktop 
 
     .container{
+
         @include breakpoint-up (large) {
             display: flex;
             align-items: center;
@@ -16,7 +17,7 @@
 
     &__image {
         position: relative;
-        height: 47vh;
+        height: 40rem;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -27,7 +28,7 @@
         
         @include breakpoint-up(large) {
             flex: 2;
-            height: 86vh;   
+            height: 57.5rem;   
         }
 
         @include breakpoint-up(xlarge) {
@@ -46,18 +47,15 @@
             background-repeat: no-repeat;
             background-position: center bottom;
 
-            @include breakpoint-down(small){
-                
-             }
-
-            @include breakpoint-up(medium){
-               min-height: 40rem; 
-            }
+            
 
             @include breakpoint-up(large) {
+                min-height: 40rem; 
                 background-size: 55%;
                 margin-left: 5rem;
             }
+
+            
 
             @include breakpoint-up(xlarge) {
                 background-size: 60%;
@@ -82,7 +80,7 @@
 
         h1 {
             font-weight: bold;
-            font-size: $font-xl;
+            font-size: $font-large;
             line-height: 1.5em;
             color: $blueishGrey;
             margin-bottom: 2.5rem;
@@ -97,7 +95,7 @@
         }
 
         p {
-            font-size: $font-large;
+            font-size: $font-small;
             line-height: 2.5rem;
             font-weight: regular;
             margin-bottom: 3.5rem;
