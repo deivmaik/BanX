@@ -105,6 +105,12 @@ a, a:visited, a:hover {
   margin: 0 auto;
 }
 
+@media (min-width: 87.5em) {
+  .container {
+    max-width: 140rem;
+  }
+}
+
 .container--pall {
   padding-top: 3.6rem;
   padding-bottom: 3.6rem;
@@ -162,7 +168,7 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
-button, .button {
+button {
   display: inline-block;
   padding: 1rem 3rem;
   background: -webkit-gradient(linear, left top, right top, from(#EDB541), to(#FFCA5C));
@@ -177,7 +183,11 @@ button, .button {
   transition: opacity 300ms ease-in-out;
 }
 
-button:hover, .button:hover {
+button.hero__cta {
+  padding: 1.5rem 3rem;
+}
+
+button:hover {
   opacity: 0.5;
 }
 
@@ -339,6 +349,12 @@ button:hover, .button:hover {
   }
 }
 
+@media (min-width: 87.5em) {
+  .hero__image {
+    height: 91.4vh;
+  }
+}
+
 .hero__image::after {
   content: "";
   position: absolute;
@@ -350,9 +366,22 @@ button:hover, .button:hover {
   background-position: center bottom;
 }
 
+@media (min-width: 40em) {
+  .hero__image::after {
+    min-height: 40rem;
+  }
+}
+
 @media (min-width: 64em) {
   .hero__image::after {
     background-size: 55%;
+    margin-left: 5rem;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .hero__image::after {
+    background-size: 60%;
     margin-left: 5rem;
   }
 }
@@ -374,6 +403,12 @@ button:hover, .button:hover {
   }
 }
 
+@media (min-width: 87.5em) {
+  .hero__content {
+    margin-left: 0;
+  }
+}
+
 .hero__content h1 {
   font-weight: bold;
   font-size: 4rem;
@@ -388,12 +423,24 @@ button:hover, .button:hover {
   }
 }
 
+@media (min-width: 87.5em) {
+  .hero__content h1 {
+    font-size: 5.4rem;
+  }
+}
+
 .hero__content p {
   font-size: 1.6rem;
   line-height: 2.5rem;
   font-weight: regular;
   margin-bottom: 3.5rem;
   color: #2D3332;
+}
+
+@media (min-width: 87.5em) {
+  .hero__content p {
+    font-size: 1.8rem;
+  }
 }
 
 .hero__content--text-one {

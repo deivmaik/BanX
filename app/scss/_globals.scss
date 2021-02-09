@@ -32,6 +32,10 @@ a, a:visited, a:hover {
     max-width: 110rem;
     margin: 0 auto;
 
+    @include breakpoint-up(xlarge){
+        max-width: 140rem;
+    }
+
     &--pall {
         padding-top: 3.6rem;
         padding-bottom: 3.6rem;
@@ -88,7 +92,7 @@ a, a:visited, a:hover {
 
 // Buttons 
 
-button, .button{
+button {
     display: inline-block;
     padding: 1rem 3rem;
     background: linear-gradient(90deg, #EDB541 0%, #FFCA5C 100%);
@@ -100,10 +104,15 @@ button, .button{
     font-weight: bold;
     transition: opacity 300ms ease-in-out;
 
+    &.hero__cta {
+        padding: 1.5rem 3rem; 
+    }
+
     &:hover{
         opacity: 0.5;
     }
 }
+
 
 
 

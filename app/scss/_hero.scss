@@ -22,11 +22,18 @@
         background-position: center center;
         margin-left: 8rem;
         margin-top: -1rem;
+
+        
         
         @include breakpoint-up(large) {
             flex: 2;
             height: 86vh;   
         }
+
+        @include breakpoint-up(xlarge) {
+            height: 91.4vh;
+        }
+        
 
          &::after{
         // Before are psuedo elements, so they always have to go with an empty content or they wont work 
@@ -39,8 +46,21 @@
             background-repeat: no-repeat;
             background-position: center bottom;
 
+            @include breakpoint-down(small){
+                
+             }
+
+            @include breakpoint-up(medium){
+               min-height: 40rem; 
+            }
+
             @include breakpoint-up(large) {
                 background-size: 55%;
+                margin-left: 5rem;
+            }
+
+            @include breakpoint-up(xlarge) {
+                background-size: 60%;
                 margin-left: 5rem;
             }
         }
@@ -54,7 +74,10 @@
             align-items: center;
             margin-left: 1.5rem;
             text-align: start;
+        }
 
+        @include breakpoint-up(xlarge){
+            margin-left: 0
         }
 
         h1 {
@@ -67,6 +90,10 @@
             @include breakpoint-up(large) {
                 font-size: 4rem;
             }
+
+            @include breakpoint-up(xlarge){
+                font-size: 5.4rem;
+            }
         }
 
         p {
@@ -75,7 +102,13 @@
             font-weight: regular;
             margin-bottom: 3.5rem;
             color: $blueishGrey;
+
+            @include breakpoint-up(xlarge){
+                font-size: $font-medium
+                }
         }
+
+            
         
         &--text-one {
             font-style: italic;
@@ -85,5 +118,8 @@
             font-style: italic;
             color: $golden;
         }
+
+        
     }
+    
 }
