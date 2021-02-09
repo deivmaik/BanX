@@ -2,15 +2,33 @@
 // mobile version 
 .hero {
 
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF0F3 100%);
+
+    // this is the media query for desktop 
+
+    .container{
+        @include breakpoint-up (large) {
+            display: flex;
+            align-items: center;
+        }
+     
+    }
+
     &__image {
         position: relative;
-        height: 50vh;
+        height: 47vh;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+        margin-left: 8rem;
+        margin-top: -1rem;
         
+        @include breakpoint-up(large) {
+            flex: 2;
+            height: 86vh;   
+        }
 
-         &::before{
+         &::after{
         // Before are psuedo elements, so they always have to go with an empty content or they wont work 
             content: "";
             position: absolute;
@@ -20,26 +38,52 @@
             background-image: url('/img/mainimg.png');
             background-repeat: no-repeat;
             background-position: center bottom;
+
+            @include breakpoint-up(large) {
+                background-size: 55%;
+                margin-left: 5rem;
+            }
         }
     }
 
     &__content {
         text-align: center;
 
+        @include breakpoint-up(large) {
+            flex: 1;
+            align-items: center;
+            margin-left: 1.5rem;
+            text-align: start;
+
+        }
+
         h1 {
             font-weight: bold;
-            font-size: 3rem;
+            font-size: $font-xl;
             line-height: 1.5em;
             color: $blueishGrey;
             margin-bottom: 2.5rem;
+
+            @include breakpoint-up(large) {
+                font-size: 4rem;
+            }
         }
 
         p {
-            font-size: 1.6rem;
+            font-size: $font-large;
             line-height: 2.5rem;
             font-weight: regular;
             margin-bottom: 3.5rem;
             color: $blueishGrey;
+        }
+        
+        &--text-one {
+            font-style: italic;
+        }
+
+        &--text-two {
+            font-style: italic;
+            color: $golden;
         }
     }
 }

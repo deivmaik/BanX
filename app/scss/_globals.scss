@@ -31,10 +31,41 @@ a, a:visited, a:hover {
 .container {
     max-width: 110rem;
     margin: 0 auto;
-    padding-top: 3.6rem;
-    padding-right: 2.4rem;
-    padding-bottom: 3.6rem;
-    padding-left: 2.4rem;
+
+    &--pall {
+        padding-top: 3.6rem;
+        padding-bottom: 3.6rem;
+        padding-right: 2.4rem;
+        padding-left: 2.4rem
+    }
+
+    &--py{
+        padding-top: 3.6rem;
+        padding-bottom: 3.6rem
+    }
+
+    &--px{
+        padding-right: 2.4rem;
+        padding-left: 2.4rem
+    }
+
+    &--pt{
+        padding-top: 3.6rem
+    }
+    &--pr{
+        padding-right: 2.4rem
+    }
+    &--pb{
+        padding-bottom: 3.6rem
+    }
+    &--pl{
+        padding-left: 2.4rem
+    }
+
+  
+    
+
+    
 }
 
 // Flexbox classes

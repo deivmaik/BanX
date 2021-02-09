@@ -18,7 +18,7 @@
     <header class="header">
         <div class="overlay contains-fade"></div>
 
-        <nav class="container flex flex-jc-sb flex-ai-c">
+        <nav class="container container--pall flex flex-jc-sb flex-ai-c">
             <a class="header__logo" href="/">
                 <img src="/img/logo.svg" alt="NyBank logo"></a>
             <a class="header__toggle hide-for-desktop" id="hamburger" href="#">
@@ -47,12 +47,16 @@
     </header>
 
     <section class="hero">
-        <div class="hero__content">
-            <h1>A new kind of<Br> digital banking</h1>
-            <p>Made by young people,<br>for young people</p>
-            <button type="button" class="hero__cta">Open a free acount</button>
+        <div class="container">
+            <div class="hero__content container--pall">
+                <h1>A new kind of<Br> <span class="hero__content--text-one">digital</span> <span
+                        class="hero__content--text-two">banking</span> </h1>
+                <p>Made by young people,for young people</p>
+                <button type="button" class="hero__cta">Open a free account</button>
+            </div>
+            <div class="hero__image container"></div>
         </div>
-        <div class="hero__image container"></div>
+
     </section>
 
     <script src="/app/js/script.js"></script>
