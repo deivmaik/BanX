@@ -1,0 +1,43 @@
+
+// mobile version 
+.hero {
+
+    &__image {
+        position: relative;
+        height: 60rem;
+        background-image: url('/img/bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        
+
+         &::before{
+        // Before are psuedo elements, so they always have to go with an empty content or they wont work 
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('/img/mainimg.png');
+            background-size: 150%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+    }
+
+    &__content {
+        text-align: center;
+
+        h1 {
+            font-weight: bold;
+            font-size: 3rem;
+            line-height: 1.5em;
+            color: $blueishGrey;
+            margin-bottom: 2.5rem;
+        }
+
+        p {
+            line-height: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+    }
+}

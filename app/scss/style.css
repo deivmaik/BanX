@@ -275,4 +275,41 @@ button, .button {
 .header > nav > button:hover {
   opacity: 0.5;
 }
+
+.hero__image {
+  position: relative;
+  height: 60rem;
+  background-image: url("/img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero__image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/mainimg.png");
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.hero__content {
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5em;
+  color: #2D3332;
+  margin-bottom: 2.5rem;
+}
+
+.hero__content p {
+  line-height: 2.5rem;
+  margin-bottom: 3.5rem;
+}
 /*# sourceMappingURL=style.css.map */
