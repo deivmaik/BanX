@@ -77,36 +77,7 @@
         @include breakpoint-up(xlarge){
             margin-left: 0
         }
-
-        h1 {
-            font-weight: bold;
-            font-size: $font-large;
-            line-height: 1.5em;
-            color: $blueishGrey;
-            margin-bottom: 2.5rem;
-
-            @include breakpoint-up(large) {
-                font-size: 4rem;
-            }
-
-            @include breakpoint-up(xlarge){
-                font-size: 5.4rem;
-            }
-        }
-
-        p {
-            font-size: $font-small;
-            line-height: 2.5rem;
-            font-weight: regular;
-            margin-bottom: 3.5rem;
-            color: $blueishGrey;
-
-            @include breakpoint-up(xlarge){
-                font-size: $font-medium
-                }
-        }
-
-            
+    
         
         &--text-one {
             font-style: italic;

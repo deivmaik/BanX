@@ -8,6 +8,7 @@ html {
 }
 
 body {
+    background-color: #FFF0F3;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -31,6 +32,7 @@ h1, h2, h3 {
 }
 
 h1 {
+
     font-size: $font-large;
     margin-bottom: 2.5rem;
 
@@ -44,15 +46,29 @@ h1 {
 }
 
 h2 {
-    font-size:3rem;
+    font-size:2.8rem;
     margin-bottom: 2.5rem;
     
     @include breakpoint-up(large) {
-        font-size:3.6rem ;
+        font-size:3rem ;
         margin-bottom: 3.6rem;
     }
      
 }
+
+p {
+    font-size: $font-small;
+    line-height: 2.5rem;
+    font-weight: regular;
+    margin-bottom: 3.5rem;
+    color: $blueishGrey;
+
+    @include breakpoint-up(xlarge){
+        font-size: $font-medium
+        }
+}
+
+
 
 a, a:visited, a:hover {
     text-decoration: none;

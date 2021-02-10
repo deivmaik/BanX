@@ -1,17 +1,42 @@
 
 .features {
+    
+    border-radius: 3rem;
+    text-align: center;
+
+    &__content {
+        background-color: white;
+        border-radius: 5rem 5rem 0 0;
+    }
+    &__intro{
+        text-align: center;
+        margin: 2.5rem;
+    
+        @include breakpoint-up(large){
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        &--two{
+            margin-top: -2rem;
+        }
+    }
 
     &__grid {
-
+       
         @include breakpoint-up(medium){
             display: flex;
             flex-wrap: wrap;
+            margin-top: 7rem;
         }
     }
 
     &__item {
-        border:1px solid blue;
+
         padding: 1rem;
+        align-items: center;
+        justify-content: center;
+        
 
         @include breakpoint-up(medium){
             flex: 0 0 50%
@@ -24,13 +49,51 @@
 
     &__icon {
         
+        margin-bottom: 2rem; 
+
+      @include breakpoint-up(large){
+        margin-bottom: 2rem;
+      } 
+      
+      >img{
+          max-width: 10rem;
+          transition: all 150ms ease-in-out;
+      }
+
+      >img:hover{
+          transform: scale(1.05);
+      }
     }
 
     &__title {
-        
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: $blueishGrey;
+        margin-bottom: 1rem;
+
+    @include breakpoint-up(large){
+        font-size: $font-medium ;
+        margin-bottom: 2.4rem;
+    }
+
+    @include breakpoint-up(xlarge){
+        font-weight: 500;
+    }
     }
 
     &__description {
-        
+        margin: 2rem;
+        font-size: $font-small;
+        line-height: 2rem;
+        color: $grey ;
+
+        @include breakpoint-up(medium) {
+            margin: 2rem 1rem;
+        }
+
+        @include breakpoint-up(large){
+            font-size: 1.2rem;
+        }
     }
 }
