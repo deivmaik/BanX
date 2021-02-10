@@ -2,7 +2,7 @@
 .footer {
     margin-top: 2rem;
     background-color: #FFCBBA;
-    color: $blueishGrey;
+    color: black;
     padding: 4rem;
     text-align: center;
 
@@ -148,6 +148,7 @@
     &__copyright{
         margin-top: 3rem;
         font-size: $font-small;
+       
 
         @include breakpoint-up(medium){
             grid-area: copyright;
@@ -159,5 +160,7 @@
             justify-self: end;
             font-size: 1.2rem
         }
+
+    
     }
 }
