@@ -1,34 +1,65 @@
 
 .footer {
     margin-top: 2rem;
-    background-color: $footer;
-    color: $white;
+    background-color: #FFCBBA;
+    color: $blueishGrey;
     padding: 4rem;
     text-align: center;
 
-    @include breakpoint-up(large){
-        display: grid;
-        grid-template-columns: repeat(3, 1fr) 2fr;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: 
-            "logo one two cta"
-            "social one two cta";
+    .container{
+        
+        @include breakpoint-up(medium){
+            display: grid;
+            grid-template-columns:1fr 1fr ;
+            grid-template-rows: auto ;
+            grid-template-areas: 
+                "logo one"
+                "social two"
+                "cta copyright" ;
+        }
+
+        @include breakpoint-up(large){
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            grid-template-rows: 1fr auto;
+            grid-template-areas: 
+                "logo one two cta"
+                "social one two copyright";
+            justify-items: start;
+        }
     }
 
     &__logo{
         display: inline-block;
-        margin-bottom: 3rem;
+
+        @include breakpoint-down(medium){
+            grid-area: logo;
+            margin-bottom: 3rem;
+            flex: 1;
+        }
 
         @include breakpoint-up(large){
-            grid-area: logo;
+            margin-left: 2rem;
         }
+
     }
 
     &__social{
-        margin-bottom: 3rem;
+        
+
+        @include breakpoint-down(medium){
+            grid-area: social;
+            margin-bottom: 3rem;
+        }
+
+        @include breakpoint-up(medium){
+            margin-top: 2rem;
+        }
 
         @include breakpoint-up(large){
             grid-area: social;
+            align-self: end;
+            margin-left: 2rem;
         }
 
         a{
@@ -51,37 +82,82 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-size: $font-small;
         
 
+        @include breakpoint-up(large){
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        
         &.one{
 
-            @include breakpoint-up(large){
+            @include breakpoint-up(medium){
                 grid-area: one;
             }
+
+        
         }
 
         &.two{
-            margin-bottom: 3rem;
-            @include breakpoint-up(large){
+           
+            @include breakpoint-down(medium){
+                margin-bottom: 3rem;
+            }
+
+            @include breakpoint-up(medium){
                 grid-area: two;
             }
+            
         }
 
         a{
             font-size: $font-small;
-            line-height: 3rem;
             color: $blueishGrey;
+            height: 3rem;
+            @include breakpoint-down(medium){
+                line-height: 2.5rem;
+            }
+            @include breakpoint-up(large){
+                font-size: 1.2rem;
+                height: 2rem;
+            }
+        }
+        a:hover{
+            color: $white;
         }
     }
 
     &__cta{
-        margin-bottom: 3rem;
-        @include breakpoint-up(large){
+        @include breakpoint-down(medium){
             grid-area: cta;
+            margin-bottom: 3rem;
+        }
+
+        @include breakpoint-down(medium){
+            grid-area: cta;
+            margin-top: -1rem;
+        }
+
+        @include breakpoint-up(large){
+            justify-self: end;
         }
     }
 
     &__copyright{
         margin-top: 3rem;
+        font-size: $font-small;
+
+        @include breakpoint-up(medium){
+            grid-area: copyright;
+            margin-top: 1rem;
+        }
+
+        @include breakpoint-up(large){
+            align-self: end;
+            justify-self: end;
+            font-size: 1.2rem
+        }
     }
 }

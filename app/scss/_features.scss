@@ -20,6 +20,14 @@
         &--two{
             margin-top: -2rem;
         }
+
+        >h2 {
+            @include breakpoint-down(large){
+                font-size: 2.6rem;
+            }
+
+
+        }
     }
 
     &__grid {
