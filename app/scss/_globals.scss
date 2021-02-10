@@ -21,6 +21,39 @@ body {
 }
 }
 
+// Text styles 
+
+h1, h2, h3 {
+    margin-top: 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    color: $blueishGrey;
+}
+
+h1 {
+    font-size: $font-large;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint-up(large) {
+        font-size: 4rem;
+    }
+
+    @include breakpoint-up(xlarge){
+        font-size: 5.4rem;
+    }
+}
+
+h2 {
+    font-size:3rem;
+    margin-bottom: 2.5rem;
+    
+    @include breakpoint-up(large) {
+        font-size:3.6rem ;
+        margin-bottom: 3.6rem;
+    }
+     
+}
+
 a, a:visited, a:hover {
     text-decoration: none;
     
