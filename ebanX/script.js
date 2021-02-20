@@ -12,32 +12,39 @@ const account2 = {
     owner: 'Henderson',
     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
     interestRate: 1.5,
-    pin: 2222,
+    pin: 1111,
 };
 
 const account3 = {
     owner: 'Bruno',
     movements: [200, -200, 340, -300, -20, 50, 400, -460],
     interestRate: 0.7,
-    pin: 3333,
+    pin: 1111,
 };
 
 const account4 = {
     owner: 'Svend',
     movements: [430, 1000, 700, 50, 90],
     interestRate: 1,
-    pin: 4444,
+    pin: 1111,
 };
 
 const account5 = {
     owner: 'Sandra',
     movements: [200, 10000, 7000, -500, -900],
     interestRate: 1,
-    pin: 5555,
+    pin: 1111,
+};
+
+const account6 = {
+    owner: 'Michael',
+    movements: [200, 10000, 7000, -500, -900],
+    interestRate: 1,
+    pin: 1111,
 };
 
 
-const accounts = [account1, account2, account3, account4, account5,];
+const accounts = [account1, account2, account3, account4, account5, account6,];
 
 // Elements
 const labelWelcome = document.querySelector('.welcome');
@@ -66,7 +73,12 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-// Changing the content of the Balance section
+
+
+
+
+// BALANCE SECTION MANIPULATION
+
 const displayMovements = function (movements) {
 
     containerMovements.innerHTML = ' '
@@ -76,8 +88,8 @@ const displayMovements = function (movements) {
         // If the movements are bigger than zero then is deposit, else is withdrawal
         const html = `
         <div class="movements__row">
-                <div class="movements__type movements__type--${type}">${i + 1}${' ' + type}</div>
-                <div class="movements__value">${mov}</div>
+                <div class="movements__type movements__type--${type}">${i + 1}-${' ' + type}</div>
+                <div class="movements__value">${mov} €</div>
             </div>
         `;
         // This const changes the info inside the html 
@@ -86,8 +98,90 @@ const displayMovements = function (movements) {
     });
 }
 
-displayMovements(account1.movements);
-// To display the movements 
+
+// CURRENT BALANCE CALCULATOR
+
+const calcDisplayBalance = function (movements) {
+    const balance = movements.reduce((acc, cur) => acc + cur, 0);
+    labelBalance.textContent = `${balance} €`
+    // acc= accumulator
+    // cur = current value  
+}
+
+
+// DEFINING USERNAMES
+
+const calcDisplaySummary = function (acc) {
+    const incomes = acc.movements
+        .filter(mov => mov > 0)
+        .reduce((acc, mov) => acc + mov, 0)
+    labelSumIn.textContent = `${incomes} €`
+
+    const out = acc.movements.filter(mov => mov < 0)
+        .reduce((acc, mov) => acc + mov, 0)
+    labelSumOut.textContent = `${Math.abs(out)} €`
+    // Math.abs deletes the negative sign 
+
+    const interest = acc.movements.filter(mov => mov > 0)
+        .map(deposit => (deposit * acc.interestRate) / 100)
+        .filter((int, i, arr) => { return int >= 1 })
+        // this only pays the interest if the interest is over 1 
+        .reduce((acc, int) => acc + int, 0)
+    labelSumInterest.textContent = `${interest} €`
+    // int = interest 
+}
+
+
+// DEFINING USERNAMES
+
+const createUsernames = function (accs) {
+    accs.forEach(function (acc) {
+        acc.username = acc.owner.toLowerCase()
+    })
+}
+// converts all the account owner names to lowercase , it says acc instead of account in order to not confuse them with the accounts const
+createUsernames(accounts)
+// To create the accounts for each owner
+
+
+// USER LOGIN VERIFICATION 
+
+let currentAccount
+
+btnLogin.addEventListener('click', function (e) {
+    e.preventDefault()
+    // This prevents the page from reloading, forms by default reload when submited 
+
+    currentAccount = accounts.find(
+        acc => acc.username === inputLoginUsername.value
+    )
+
+    // Display the UI
+    if (currentAccount?.pin === Number(inputLoginPin.value)) {
+        // inputs are strings, so the Number changes it from string to number 
+        labelWelcome.textContent = `Welcome back!, ${currentAccount.owner.split(' ')[0]}`
+        // this takes the name of the current account and selects the first part of the Array, so the name 
+    }
+    containerApp.style.opacity = 100
+    // This turns the opacity from 0 % to 100 %
+
+    // Clear input fields after login
+    inputLoginUsername.value = inputLoginPin.value = ''
+    inputLoginPin.blur();
+
+    // Display movements 
+    displayMovements(currentAccount.movements)
+
+    // Display balance 
+    calcDisplayBalance(currentAccount.movements)
+
+    // Display summary 
+    calcDisplaySummary(currentAccount)
+
+})
+
+
+
 
 
 
@@ -104,3 +198,20 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+// DEPOSITS FUNCTION
+
+const deposits = movements.filter(function (mov) {
+    return mov > 0
+})
+
+// WITHDRAWALS FUNCTION
+const withdrawals = movements.filter(mov => mov < 0)
+// Its the same process but with an arrow function instead just for practice
+
+
+// CURRENT BALANCE CALCULATOR
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0)
+// acc= accumulator
+// cur = current value

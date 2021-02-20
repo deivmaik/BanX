@@ -11,6 +11,13 @@ nav {
        justify-content: space-between;
     }
 
+    @include breakpoint-up(xlarge){
+        justify-content: space-around;
+        margin-left: 30rem;
+        margin-right: 30rem;
+
+     }
+
     display: flex;
     justify-content: space-around;
     margin-left: 2rem;
@@ -87,8 +94,8 @@ nav {
     gap: 2rem;
 
     /* This creates the fade in/out anumation */
-    // opacity: 0;
-    // transition: all 1s;   
+    opacity: 0;
+    transition: all 1s;   
 
     .balance {
         grid-column: 1 / span 2;
