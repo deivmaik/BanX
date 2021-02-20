@@ -1,0 +1,224 @@
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+}
+
+nav.welcome {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+nav.logo {
+  height: 5.25rem;
+}
+
+nav.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav.login.login__input {
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 12rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+nav.login.login__input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+nav.login.login__input::-webkit-input-placeholder {
+  color: #bbb;
+}
+
+nav.login.login__input:-ms-input-placeholder {
+  color: #bbb;
+}
+
+nav.login.login__input::-ms-input-placeholder {
+  color: #bbb;
+}
+
+nav.login.login__input::placeholder {
+  color: #bbb;
+}
+
+nav.login.login__btn {
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+nav.login.login__btn:hover,
+nav.login .login__btn:focus,
+nav.login .btn--sort:hover,
+nav.login .btn--sort:focus {
+  outline: none;
+  color: #777;
+}
+
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 3fr;
+      grid-template-columns: 4fr 3fr;
+  -ms-grid-rows: auto (15rem)[3] auto;
+      grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+  /* This creates the fade in/out anumation */
+}
+
+.app.balance {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.app.balance > div.balance__label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+}
+
+.app.balance > div.balance__date {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.app.balance.balance__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+.app.movements {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.app.movements.movements__row {
+  padding: 2.25rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.app.movements.movements__row.movements__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.app.movements.movements__row.movements__type--deposit {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#39b385), to(#9be15d));
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.app.movements.movements__row.movements__type--withdrawal {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#e52a5a), to(#ff585f));
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.app.movements.movements__row.movements__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.app.movements.movements__row.movements__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+.app.summary {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 / 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.app.summary.summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.app.summary.summary__value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.app.summary.summary__value--in,
+.app.summary .summary__value--interest {
+  color: #66c873;
+}
+
+.app.summary.summary__value--out {
+  color: #f5465d;
+}
+
+.app.summary.btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+/*# sourceMappingURL=backup.css.map */
