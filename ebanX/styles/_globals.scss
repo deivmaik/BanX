@@ -1,0 +1,160 @@
+html {
+    font-size:  62.5%;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444;
+     background-color: #f3f3f3;
+    height: 100vh;
+    padding: 2rem;
+
+    // this stops from scrolling 
+ &.noScroll {
+    overflow: hidden;
+}
+}
+
+// Text styles 
+
+h1, h2, h3 {
+    margin-top: 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    color: $blueishGrey;
+}
+
+h1 {
+
+    font-size: $font-large;
+    margin-bottom: 2.5rem;
+
+    @include breakpoint-up(large) {
+        font-size: 4rem;
+    }
+
+    @include breakpoint-up(xlarge){
+        font-size: 5.4rem;
+    }
+}
+
+h2 {
+    font-size:2.8rem;
+    margin-bottom: 2.5rem;
+    
+    @include breakpoint-up(large) {
+        font-size:3rem ;
+        margin-bottom: 3.6rem;
+    }
+     
+}
+
+p {
+    font-size: $font-small;
+    line-height: 2.5rem;
+    font-weight: regular;
+    margin-bottom: 3.5rem;
+    color: $blueishGrey;
+
+    @include breakpoint-up(xlarge){
+        font-size: $font-medium
+        }
+}
+
+
+
+a, a:visited, a:hover {
+    text-decoration: none;
+    
+}
+
+// spacing
+
+.container {
+    max-width: 110rem;
+    margin: 0 auto;
+
+    @include breakpoint-up(xlarge){
+        max-width: 140rem;
+    }
+
+    &--pall {
+        padding-top: 3.6rem;
+        padding-bottom: 3.6rem;
+        padding-right: 2.4rem;
+        padding-left: 2.4rem
+    }
+
+    &--py{
+        padding-top: 3.6rem;
+        padding-bottom: 3.6rem
+    }
+
+    &--px{
+        padding-right: 2.4rem;
+        padding-left: 2.4rem
+    }
+
+    &--pt{
+        padding-top: 3.6rem
+    }
+    &--pr{
+        padding-right: 2.4rem
+    }
+    &--pb{
+        padding-bottom: 3.6rem
+    }
+    &--pl{
+        padding-left: 2.4rem
+    }
+
+  
+    
+
+    
+}
+
+// Flexbox classes
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    
+    &-jc-c{
+        justify-content: center;
+    }
+    
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+// Buttons 
+
+
+
+
+
+// Visibility 
+
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
