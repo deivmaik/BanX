@@ -15,6 +15,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: #444;
   background-color: #f3f3f3;
+  height: 100vh;
   padding: 2rem;
 }
 
@@ -45,34 +46,17 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0 2rem;
 }
 
-@media (max-width: 39.9375em) {
-  nav {
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 63.9375em) {
-  nav {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-
 nav .welcome {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 500;
 }
 
@@ -139,7 +123,7 @@ nav .login .btn--sort:focus {
   color: #777;
 }
 
-.app {
+body .app {
   position: relative;
   max-width: 100rem;
   margin: 4rem auto;
@@ -153,13 +137,7 @@ nav .login .btn--sort:focus {
   /* This creates the fade in/out anumation */
 }
 
-@media (max-width: 39.9375em) {
-  .app {
-    display: block;
-  }
-}
-
-.app .balance {
+body .app .balance {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -175,62 +153,23 @@ nav .login .btn--sort:focus {
   margin-bottom: 2rem;
 }
 
-.app .balance__label {
-  font-size: 2rem;
+body .app .balance__label {
+  font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: -0.2rem;
 }
 
-@media (max-width: 39.9375em) {
-  .app .balance__label {
-    margin-left: 1.5rem;
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 63.9375em) {
-  .app .balance__label {
-    margin-left: 2rem;
-  }
-}
-
-.app .balance__date {
+body .app .balance__date {
   font-size: 1.4rem;
-  color: #bbb8b8;
+  color: #888;
 }
 
-@media (max-width: 39.9375em) {
-  .app .balance__date {
-    margin-left: 1.5rem;
-  }
-}
-
-@media (max-width: 63.9375em) {
-  .app .balance__date {
-    margin-left: 2rem;
-  }
-}
-
-.app .balance__value {
-  font-size: 2.5rem;
+body .app .balance__value {
+  font-size: 4.5rem;
   font-weight: 400;
 }
 
-@media (max-width: 39.9375em) {
-  .app .balance__value {
-    margin-bottom: 1rem;
-    margin-right: 1.5rem;
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 63.9375em) {
-  .app .balance__value {
-    margin-right: 1.5rem;
-  }
-}
-
-.app .movements {
+body .app .movements {
   -ms-grid-row: 2;
   -ms-grid-row-span: 3;
   grid-row: 2 / span 3;
@@ -239,7 +178,7 @@ nav .login .btn--sort:focus {
   overflow: scroll;
 }
 
-.app .movements__row {
+body .app .movements__row {
   padding: 2.25rem 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -250,13 +189,7 @@ nav .login .btn--sort:focus {
   border-bottom: 1px solid #eee;
 }
 
-@media (max-width: 39.9375em) {
-  .app .movements__row {
-    padding: 2.25rem 3rem;
-  }
-}
-
-.app .movements__row .movements__type {
+body .app .movements__row .movements__type {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
@@ -266,29 +199,29 @@ nav .login .btn--sort:focus {
   margin-right: 2rem;
 }
 
-.app .movements__row .movements__type--deposit {
-  background-image: -webkit-gradient(linear, left top, right top, from(#7EAFCB), to(#82CDE1));
-  background-image: linear-gradient(90deg, #7EAFCB 0%, #82CDE1 100%);
+body .app .movements__row .movements__type--deposit {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#39b385), to(#9be15d));
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
 }
 
-.app .movements__row .movements__type--withdrawal {
-  background-image: -webkit-gradient(linear, left top, right top, from(#E8C06D), to(#F2C25D));
-  background-image: linear-gradient(90deg, #E8C06D 0%, #F2C25D 100%);
+body .app .movements__row .movements__type--withdrawal {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#e52a5a), to(#ff585f));
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
 }
 
-.app .movements__row .movements__date {
+body .app .movements__row .movements__date {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: #424746;
+  color: #666;
 }
 
-.app .movements__row .movements__value {
-  font-size: 1.5rem;
+body .app .movements__row .movements__value {
+  font-size: 1.7rem;
   margin-left: auto;
 }
 
-.app .summary {
+body .app .summary {
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   grid-row: 5 / 6;
@@ -302,66 +235,47 @@ nav .login .btn--sort:focus {
   margin-top: 1rem;
 }
 
-@media (max-width: 39.9375em) {
-  .app .summary {
-    margin-right: 1rem;
-  }
-}
-
-@media (max-width: 63.9375em) {
-  .app .summary {
-    margin-top: 2rem;
-    margin-right: 2rem;
-  }
-}
-
-.app .summary__label {
+body .app .summary__label {
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 0.8rem;
 }
 
-.app .summary__value {
-  font-size: 1.2rem;
+body .app .summary__value {
+  font-size: 2.2rem;
   margin-right: 2.5rem;
 }
 
-.app .summary__value--in, .app .summary__value--interest {
-  color: #424746;
+body .app .summary__value--in, body .app .summary__value--interest {
+  color: #66c873;
 }
 
-.app .summary__value--out {
-  color: #bbb8b8;
+body .app .summary__value--out {
+  color: #f5465d;
 }
 
-.app .summary .btn--sort {
+body .app .summary .btn--sort {
   margin-left: auto;
   border: none;
   background: none;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
 }
 
-.app .operation {
+body .app .operation {
   border-radius: 1rem;
   padding: 3rem 4rem;
-  color: #424746;
+  color: #333;
 }
 
-@media (max-width: 39.9375em) {
-  .app .operation {
-    margin-top: 2rem;
-  }
+body .app .operation--transfer {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#ffb003), to(#ffcb03));
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
 }
 
-.app .operation--transfer {
-  background-image: -webkit-gradient(linear, left top, right top, from(#EDB541), to(#FFDC94));
-  background-image: linear-gradient(90deg, #EDB541 0%, #FFDC94 100%);
-}
-
-.app .operation--transfer .form {
+body .app .operation--transfer .form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5fr 2.5fr 1fr;
@@ -371,36 +285,26 @@ nav .login .btn--sort:focus {
   gap: 0.4rem 1rem;
 }
 
-.app .operation--transfer .form__input {
+body .app .operation--transfer .form__input {
   width: 100%;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
   font-family: inherit;
   font-size: 1.5rem;
   text-align: center;
-  color: #424746;
+  color: #333;
   padding: 0.3rem 1rem;
   border-radius: 0.7rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.app .operation--transfer .form__input input[type=number]::-webkit-outer-spin-button,
-.app .operation--transfer .form__input input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.app .operation--transfer .form__input input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.app .operation--transfer .form__label {
+body .app .operation--transfer .form__label {
   font-size: 1.3rem;
   text-align: center;
 }
 
-.app .operation--transfer .form__btn {
+body .app .operation--transfer .form__btn {
   border: none;
   border-radius: 0.7rem;
   font-size: 1.8rem;
@@ -410,22 +314,22 @@ nav .login .btn--sort:focus {
   transition: all 0.3s;
 }
 
-.app .operation--transfer .form__btn:focus {
+body .app .operation--transfer .form__btn:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.app .operation--transfer .form__input:focus {
+body .app .operation--transfer .form__input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.app .operation--loan {
-  background-image: -webkit-gradient(linear, left top, right top, from(#4B89AC), to(#ACE6F6));
-  background-image: linear-gradient(90deg, #4B89AC 0%, #ACE6F6 100%);
+body .app .operation--loan {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#39b385), to(#9be15d));
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
 }
 
-.app .operation--loan .form {
+body .app .operation--loan .form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5fr 2.5fr 1fr;
@@ -435,26 +339,26 @@ nav .login .btn--sort:focus {
   gap: 0.4rem 1rem;
 }
 
-.app .operation--loan .form__input {
+body .app .operation--loan .form__input {
   width: 100%;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
   font-family: inherit;
   font-size: 1.5rem;
   text-align: center;
-  color: #424746;
+  color: #333;
   padding: 0.3rem 1rem;
   border-radius: 0.7rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.app .operation--loan .form__label {
+body .app .operation--loan .form__label {
   font-size: 1.3rem;
   text-align: center;
 }
 
-.app .operation--loan .form__btn {
+body .app .operation--loan .form__btn {
   border: none;
   border-radius: 0.7rem;
   font-size: 1.8rem;
@@ -464,32 +368,32 @@ nav .login .btn--sort:focus {
   transition: all 0.3s;
 }
 
-.app .operation--loan .form__btn:focus {
+body .app .operation--loan .form__btn:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.app .operation--loan .form__input:focus {
+body .app .operation--loan .form__input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.app .operation--loan .form--loan {
+body .app .operation--loan .form--loan {
   -ms-grid-columns: 2.5fr 1fr 2.5fr;
       grid-template-columns: 2.5fr 1fr 2.5fr;
 }
 
-.app .operation--loan .form__label--loan {
+body .app .operation--loan .form__label--loan {
   -ms-grid-row: 2;
   grid-row: 2;
 }
 
-.app .operation--close {
-  background-image: -webkit-gradient(linear, left top, right top, from(#BF5B54), to(#FE5F55));
-  background-image: linear-gradient(90deg, #BF5B54 0%, #FE5F55 100%);
+body .app .operation--close {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#e52a5a), to(#ff585f));
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
 }
 
-.app .operation--close .form {
+body .app .operation--close .form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5fr 2.5fr 1fr;
@@ -499,26 +403,26 @@ nav .login .btn--sort:focus {
   gap: 0.4rem 1rem;
 }
 
-.app .operation--close .form__input {
+body .app .operation--close .form__input {
   width: 100%;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
   font-family: inherit;
   font-size: 1.5rem;
   text-align: center;
-  color: #424746;
+  color: #333;
   padding: 0.3rem 1rem;
   border-radius: 0.7rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.app .operation--close .form__label {
+body .app .operation--close .form__label {
   font-size: 1.3rem;
   text-align: center;
 }
 
-.app .operation--close .form__btn {
+body .app .operation--close .form__btn {
   border: none;
   border-radius: 0.7rem;
   font-size: 1.8rem;
@@ -528,24 +432,24 @@ nav .login .btn--sort:focus {
   transition: all 0.3s;
 }
 
-.app .operation--close .form__btn:focus {
+body .app .operation--close .form__btn:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.app .operation--close .form__input:focus {
+body .app .operation--close .form__input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.app .logout-timer {
+body .app .logout-timer {
   padding: 0 0.3rem;
   margin-top: 1.9rem;
   text-align: right;
   font-size: 1.25rem;
 }
 
-.app .timer {
+body .app .timer {
   font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */
