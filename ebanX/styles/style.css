@@ -15,7 +15,6 @@ body {
   font-family: "Poppins", sans-serif;
   color: #444;
   background-color: #f3f3f3;
-  height: 100vh;
   padding: 2rem;
 }
 
@@ -56,7 +55,7 @@ nav {
 }
 
 nav .welcome {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -123,7 +122,7 @@ nav .login .btn--sort:focus {
   color: #777;
 }
 
-body .app {
+.app {
   position: relative;
   max-width: 100rem;
   margin: 4rem auto;
@@ -137,7 +136,7 @@ body .app {
   /* This creates the fade in/out anumation */
 }
 
-body .app .balance {
+.app .balance {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -153,23 +152,23 @@ body .app .balance {
   margin-bottom: 2rem;
 }
 
-body .app .balance__label {
-  font-size: 2.2rem;
+.app .balance__label {
+  font-size: 2rem;
   font-weight: 500;
   margin-bottom: -0.2rem;
 }
 
-body .app .balance__date {
+.app .balance__date {
   font-size: 1.4rem;
-  color: #888;
+  color: #bbb8b8;
 }
 
-body .app .balance__value {
-  font-size: 4.5rem;
+.app .balance__value {
+  font-size: 2.5rem;
   font-weight: 400;
 }
 
-body .app .movements {
+.app .movements {
   -ms-grid-row: 2;
   -ms-grid-row-span: 3;
   grid-row: 2 / span 3;
@@ -178,7 +177,7 @@ body .app .movements {
   overflow: scroll;
 }
 
-body .app .movements__row {
+.app .movements__row {
   padding: 2.25rem 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -189,7 +188,7 @@ body .app .movements__row {
   border-bottom: 1px solid #eee;
 }
 
-body .app .movements__row .movements__type {
+.app .movements__row .movements__type {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
@@ -199,29 +198,29 @@ body .app .movements__row .movements__type {
   margin-right: 2rem;
 }
 
-body .app .movements__row .movements__type--deposit {
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#39b385), to(#9be15d));
-  background-image: linear-gradient(to top left, #39b385, #9be15d);
+.app .movements__row .movements__type--deposit {
+  background-image: -webkit-gradient(linear, left top, right top, from(#7EAFCB), to(#82CDE1));
+  background-image: linear-gradient(90deg, #7EAFCB 0%, #82CDE1 100%);
 }
 
-body .app .movements__row .movements__type--withdrawal {
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#e52a5a), to(#ff585f));
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+.app .movements__row .movements__type--withdrawal {
+  background-image: -webkit-gradient(linear, left top, right top, from(#E8C06D), to(#F2C25D));
+  background-image: linear-gradient(90deg, #E8C06D 0%, #F2C25D 100%);
 }
 
-body .app .movements__row .movements__date {
+.app .movements__row .movements__date {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: #666;
+  color: #424746;
 }
 
-body .app .movements__row .movements__value {
-  font-size: 1.7rem;
+.app .movements__row .movements__value {
+  font-size: 1.5rem;
   margin-left: auto;
 }
 
-body .app .summary {
+.app .summary {
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   grid-row: 5 / 6;
@@ -235,27 +234,27 @@ body .app .summary {
   margin-top: 1rem;
 }
 
-body .app .summary__label {
+.app .summary__label {
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 0.8rem;
 }
 
-body .app .summary__value {
-  font-size: 2.2rem;
+.app .summary__value {
+  font-size: 1.4rem;
   margin-right: 2.5rem;
 }
 
-body .app .summary__value--in, body .app .summary__value--interest {
-  color: #66c873;
+.app .summary__value--in, .app .summary__value--interest {
+  color: #424746;
 }
 
-body .app .summary__value--out {
-  color: #f5465d;
+.app .summary__value--out {
+  color: #bbb8b8;
 }
 
-body .app .summary .btn--sort {
+.app .summary .btn--sort {
   margin-left: auto;
   border: none;
   background: none;
@@ -264,18 +263,18 @@ body .app .summary .btn--sort {
   cursor: pointer;
 }
 
-body .app .operation {
+.app .operation {
   border-radius: 1rem;
   padding: 3rem 4rem;
-  color: #333;
+  color: #424746;
 }
 
-body .app .operation--transfer {
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#ffb003), to(#ffcb03));
-  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+.app .operation--transfer {
+  background-image: -webkit-gradient(linear, left top, right top, from(#EDB541), to(#FFDC94));
+  background-image: linear-gradient(90deg, #EDB541 0%, #FFDC94 100%);
 }
 
-body .app .operation--transfer .form {
+.app .operation--transfer .form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5fr 2.5fr 1fr;
@@ -285,26 +284,26 @@ body .app .operation--transfer .form {
   gap: 0.4rem 1rem;
 }
 
-body .app .operation--transfer .form__input {
+.app .operation--transfer .form__input {
   width: 100%;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
   font-family: inherit;
   font-size: 1.5rem;
   text-align: center;
-  color: #333;
+  color: #424746;
   padding: 0.3rem 1rem;
   border-radius: 0.7rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-body .app .operation--transfer .form__label {
+.app .operation--transfer .form__label {
   font-size: 1.3rem;
   text-align: center;
 }
 
-body .app .operation--transfer .form__btn {
+.app .operation--transfer .form__btn {
   border: none;
   border-radius: 0.7rem;
   font-size: 1.8rem;
@@ -314,22 +313,22 @@ body .app .operation--transfer .form__btn {
   transition: all 0.3s;
 }
 
-body .app .operation--transfer .form__btn:focus {
+.app .operation--transfer .form__btn:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-body .app .operation--transfer .form__input:focus {
+.app .operation--transfer .form__input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-body .app .operation--loan {
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#39b385), to(#9be15d));
-  background-image: linear-gradient(to top left, #39b385, #9be15d);
+.app .operation--loan {
+  background-image: -webkit-gradient(linear, left top, right top, from(#4B89AC), to(#ACE6F6));
+  background-image: linear-gradient(90deg, #4B89AC 0%, #ACE6F6 100%);
 }
 
-body .app .operation--loan .form {
+.app .operation--loan .form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5fr 2.5fr 1fr;
@@ -339,26 +338,26 @@ body .app .operation--loan .form {
   gap: 0.4rem 1rem;
 }
 
-body .app .operation--loan .form__input {
+.app .operation--loan .form__input {
   width: 100%;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
   font-family: inherit;
   font-size: 1.5rem;
   text-align: center;
-  color: #333;
+  color: #424746;
   padding: 0.3rem 1rem;
   border-radius: 0.7rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-body .app .operation--loan .form__label {
+.app .operation--loan .form__label {
   font-size: 1.3rem;
   text-align: center;
 }
 
-body .app .operation--loan .form__btn {
+.app .operation--loan .form__btn {
   border: none;
   border-radius: 0.7rem;
   font-size: 1.8rem;
@@ -368,32 +367,32 @@ body .app .operation--loan .form__btn {
   transition: all 0.3s;
 }
 
-body .app .operation--loan .form__btn:focus {
+.app .operation--loan .form__btn:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-body .app .operation--loan .form__input:focus {
+.app .operation--loan .form__input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-body .app .operation--loan .form--loan {
+.app .operation--loan .form--loan {
   -ms-grid-columns: 2.5fr 1fr 2.5fr;
       grid-template-columns: 2.5fr 1fr 2.5fr;
 }
 
-body .app .operation--loan .form__label--loan {
+.app .operation--loan .form__label--loan {
   -ms-grid-row: 2;
   grid-row: 2;
 }
 
-body .app .operation--close {
-  background-image: -webkit-gradient(linear, right bottom, left top, from(#e52a5a), to(#ff585f));
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+.app .operation--close {
+  background-image: -webkit-gradient(linear, left top, right top, from(#BF5B54), to(#FE5F55));
+  background-image: linear-gradient(90deg, #BF5B54 0%, #FE5F55 100%);
 }
 
-body .app .operation--close .form {
+.app .operation--close .form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5fr 2.5fr 1fr;
@@ -403,26 +402,26 @@ body .app .operation--close .form {
   gap: 0.4rem 1rem;
 }
 
-body .app .operation--close .form__input {
+.app .operation--close .form__input {
   width: 100%;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
   font-family: inherit;
   font-size: 1.5rem;
   text-align: center;
-  color: #333;
+  color: #424746;
   padding: 0.3rem 1rem;
   border-radius: 0.7rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-body .app .operation--close .form__label {
+.app .operation--close .form__label {
   font-size: 1.3rem;
   text-align: center;
 }
 
-body .app .operation--close .form__btn {
+.app .operation--close .form__btn {
   border: none;
   border-radius: 0.7rem;
   font-size: 1.8rem;
@@ -432,24 +431,24 @@ body .app .operation--close .form__btn {
   transition: all 0.3s;
 }
 
-body .app .operation--close .form__btn:focus {
+.app .operation--close .form__btn:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-body .app .operation--close .form__input:focus {
+.app .operation--close .form__input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-body .app .logout-timer {
+.app .logout-timer {
   padding: 0 0.3rem;
   margin-top: 1.9rem;
   text-align: right;
   font-size: 1.25rem;
 }
 
-body .app .timer {
+.app .timer {
   font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */
