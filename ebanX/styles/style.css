@@ -45,13 +45,30 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 2rem;
+  margin-right: 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0 2rem;
+}
+
+@media (max-width: 39.9375em) {
+  nav {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 nav .welcome {
@@ -136,6 +153,12 @@ nav .login .btn--sort:focus {
   /* This creates the fade in/out anumation */
 }
 
+@media (max-width: 39.9375em) {
+  .app {
+    display: block;
+  }
+}
+
 .app .balance {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -158,14 +181,53 @@ nav .login .btn--sort:focus {
   margin-bottom: -0.2rem;
 }
 
+@media (max-width: 39.9375em) {
+  .app .balance__label {
+    margin-left: 1.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .app .balance__label {
+    margin-left: 2rem;
+  }
+}
+
 .app .balance__date {
   font-size: 1.4rem;
   color: #bbb8b8;
 }
 
+@media (max-width: 39.9375em) {
+  .app .balance__date {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .app .balance__date {
+    margin-left: 2rem;
+  }
+}
+
 .app .balance__value {
   font-size: 2.5rem;
   font-weight: 400;
+}
+
+@media (max-width: 39.9375em) {
+  .app .balance__value {
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .app .balance__value {
+    margin-right: 1.5rem;
+  }
 }
 
 .app .movements {
@@ -186,6 +248,12 @@ nav .login .btn--sort:focus {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 39.9375em) {
+  .app .movements__row {
+    padding: 2.25rem 3rem;
+  }
 }
 
 .app .movements__row .movements__type {
@@ -234,6 +302,19 @@ nav .login .btn--sort:focus {
   margin-top: 1rem;
 }
 
+@media (max-width: 39.9375em) {
+  .app .summary {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .app .summary {
+    margin-top: 2rem;
+    margin-right: 2rem;
+  }
+}
+
 .app .summary__label {
   font-size: 1.2rem;
   font-weight: 500;
@@ -242,7 +323,7 @@ nav .login .btn--sort:focus {
 }
 
 .app .summary__value {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-right: 2.5rem;
 }
 
@@ -258,7 +339,7 @@ nav .login .btn--sort:focus {
   margin-left: auto;
   border: none;
   background: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
 }
@@ -267,6 +348,12 @@ nav .login .btn--sort:focus {
   border-radius: 1rem;
   padding: 3rem 4rem;
   color: #424746;
+}
+
+@media (max-width: 39.9375em) {
+  .app .operation {
+    margin-top: 2rem;
+  }
 }
 
 .app .operation--transfer {
@@ -296,6 +383,16 @@ nav .login .btn--sort:focus {
   border-radius: 0.7rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.app .operation--transfer .form__input input[type=number]::-webkit-outer-spin-button,
+.app .operation--transfer .form__input input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.app .operation--transfer .form__input input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .app .operation--transfer .form__label {

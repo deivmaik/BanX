@@ -1,7 +1,20 @@
 
 nav {
+
+    @include breakpoint-down(small){
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    @include breakpoint-down(medium){
+       justify-content: space-between;
+    }
+
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-left: 2rem;
+    margin-right: 2rem;
     align-items: center;
     padding: 0 2rem;
 
@@ -60,6 +73,11 @@ nav {
 }
 
 .app {
+
+    @include breakpoint-down(small){
+        display: block;
+    }
+
     position: relative;
     max-width: 100rem;
     margin: 4rem auto;
@@ -80,18 +98,50 @@ nav {
         margin-bottom: 2rem;
 
         &__label {
+
+            @include breakpoint-down(small){
+                margin-left: 1.5rem;
+                font-size: 1.6rem;
+            }
+
+            @include breakpoint-down(medium){
+                margin-left: 2rem;
+            }
+
             font-size: 2rem;
             font-weight: 500;
             margin-bottom: -0.2rem;
         }
               
         &__date {
+
+            @include breakpoint-down(small){
+                margin-left: 1.5rem;
+            }
+
+            @include breakpoint-down(medium){
+                margin-left: 2rem;
+            }
+
+
             font-size: 1.4rem;
             color: $lighterGrey;
         }
         
 
         &__value {
+
+            @include breakpoint-down(small){
+                margin-bottom: 1rem;
+                margin-right: 1.5rem;
+                font-size: 2rem;
+            }
+
+            @include breakpoint-down(medium){
+                margin-right: 1.5rem;
+            }
+
+
             font-size: 2.5rem;
             font-weight: 400;
         }
@@ -105,6 +155,11 @@ nav {
         overflow: scroll;
 
         &__row {
+
+            @include breakpoint-down(small){
+                padding: 2.25rem 3rem;
+            }
+
             padding: 2.25rem 4rem;
             display: flex;
             align-items: center;
@@ -143,6 +198,17 @@ nav {
     }
 
     .summary {
+
+        @include breakpoint-down(small){
+            margin-right: 1rem;
+        }
+
+        @include breakpoint-down(medium){
+            margin-top: 2rem;
+            margin-right: 2rem;
+            
+        }
+
         grid-row: 5 / 6;
         display: flex;
         align-items: baseline;
@@ -157,7 +223,7 @@ nav {
         }
           
         &__value {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-right: 2.5rem;
         }
           
@@ -174,13 +240,19 @@ nav {
             margin-left: auto;
             border: none;
             background: none;
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
         }
     }
 
     .operation {
+
+        @include breakpoint-down(small){
+            margin-top: 2rem;
+        }
+
+
         border-radius: 1rem;
         padding: 3rem 4rem;
         color: $blueishGrey;
@@ -207,6 +279,18 @@ nav {
                 padding: 0.3rem 1rem;
                 border-radius: 0.7rem;
                 transition: all 0.3s;
+    
+                input[type=number]::-webkit-outer-spin-button,
+                input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+
+                input[type=number] {
+                -moz-appearance:textfield;
+                }
+                
+               
             }
 
             &__label {
@@ -342,6 +426,7 @@ nav {
     }
 
     .logout-timer {
+
         padding: 0 0.3rem;
         margin-top: 1.9rem;
         text-align: right;
