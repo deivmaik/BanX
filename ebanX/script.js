@@ -6,6 +6,7 @@ const account1 = {
     movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
     interestRate: 1.2, // %
     pin: 1111,
+
 };
 
 const account2 = {
@@ -13,6 +14,7 @@ const account2 = {
     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
     interestRate: 1.5,
     pin: 1111,
+
 };
 
 const account3 = {
@@ -73,10 +75,6 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-
-
-
-
 // BALANCE SECTION MANIPULATION
 
 const displayMovements = function (movements, sort = false) {
@@ -93,7 +91,7 @@ const displayMovements = function (movements, sort = false) {
         const html = `
         <div class="movements__row">
                 <div class="movements__type movements__type--${type}">${i + 1}-${' ' + type}</div>
-                <div class="movements__value">${mov} €</div>
+                <div class="movements__value">${mov.toFixed(2)} €</div>
             </div>
         `;
         // This const changes the info inside the html 
@@ -107,7 +105,7 @@ const displayMovements = function (movements, sort = false) {
 
 const calcDisplayBalance = function (acc) {
     acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-    labelBalance.textContent = `${acc.balance} €`
+    labelBalance.textContent = `${acc.balance.toFixed(2)} €`
     // acc = account 
     // acc,= accumulator
     // cur = current value  
@@ -120,11 +118,11 @@ const calcDisplaySummary = function (acc) {
     const incomes = acc.movements
         .filter(mov => mov > 0)
         .reduce((acc, mov) => acc + mov, 0)
-    labelSumIn.textContent = `${incomes} €`
+    labelSumIn.textContent = `${incomes.toFixed(2)} €`
 
     const out = acc.movements.filter(mov => mov < 0)
         .reduce((acc, mov) => acc + mov, 0)
-    labelSumOut.textContent = `${Math.abs(out)} €`
+    labelSumOut.textContent = `${Math.abs(out).toFixed(2)} €`
     // Math.abs deletes the negative sign 
 
     const interest = acc.movements.filter(mov => mov > 0)
@@ -132,7 +130,7 @@ const calcDisplaySummary = function (acc) {
         .filter((int, i, arr) => { return int >= 1 })
         // this only pays the interest if the interest is over 1 
         .reduce((acc, int) => acc + int, 0)
-    labelSumInterest.textContent = `${interest} €`
+    labelSumInterest.textContent = `${interest.toFixed(2)} €`
     // int = interest 
 }
 
@@ -151,7 +149,7 @@ createUsernames(accounts)
 
 // USER LOGIN VERIFICATION 
 
-let currentAccount
+let currentAccount, timer;
 
 const updateUI = function (acc) {
     // Display movements 
@@ -162,6 +160,45 @@ const updateUI = function (acc) {
 
     // Display summary 
     calcDisplaySummary(acc)
+}
+
+// SETTING THE TIME FOR CURRENT TIME 
+const now = new Date()
+const day = `${now.getDate()}`.padStart(2, 0)
+const month = `${now.getMonth() + 1}`.padStart(2, 0)
+const year = now.getFullYear()
+const hour = `${now.getHours()}`.padStart(2, 0)
+const min = `${now.getMinutes()}`.padStart(2, 0)
+
+labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`
+
+const startLogOutTimer = function () {
+    const tick = function () {
+        const min = String(Math.trunc(time / 60)).padStart(2, 0)
+        const sec = String(time % 60).padStart(2, 0)
+        // this prints the time in UI
+        labelTimer.textContent = `${min}:${sec}`
+
+
+
+        // When zero seconds, stop timer and log out
+        if (time === 0) {
+            clearInterval(timer);
+            labelWelcome.textContent = 'Log in to get started'
+            containerApp.style.opacity = 0
+        }
+
+        // Decrease by 1s
+        time--
+    }
+
+    // Set the time to 1 minute 
+    let time = 60
+
+    // call the timer every second 
+    tick()
+    const timer = setInterval(tick, 1000)
+    return timer
 }
 
 btnLogin.addEventListener('click', function (e) {
@@ -185,6 +222,9 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = ''
     inputLoginPin.blur();
 
+    // Timer
+    if (timer) clearInterval(timer)
+    timer = startLogOutTimer()
     // Update UI
     updateUI(currentAccount)
 
@@ -212,6 +252,10 @@ btnTransfer.addEventListener('click', function (e) {
 
         // Update UI
         updateUI(currentAccount)
+
+        // Reset timer
+        clearInterval(timer)
+        timer = startLogOutTimer()
     }
 })
 
@@ -221,7 +265,8 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
     e.preventDefault()
 
-    const amount = Number(inputLoanAmount.value)
+    // Math.floor converts the value to the closes whole number 
+    const amount = Math.floor(inputLoanAmount.value)
 
     // must have atleast 10% of the loan in the current balance
     if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
@@ -230,6 +275,10 @@ btnLoan.addEventListener('click', function (e) {
 
         // Update UI
         updateUI(currentAccount)
+
+        // Reset timer
+        clearInterval(timer)
+        timer = startLogOutTimer()
     }
     inputLoanAmount.value = ' '
 })
@@ -267,36 +316,3 @@ btnSort.addEventListener('click', function (e) {
     sorted = !sorted
 })
 
-
-
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
-const currencies = new Map([
-    ['USD', 'United States dollar'],
-    ['EUR', 'Euro'],
-    ['GBP', 'Pound sterling'],
-]);
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-/////////////////////////////////////////////////
-
-// DEPOSITS FUNCTION
-
-const deposits = movements.filter(function (mov) {
-    return mov > 0
-})
-
-// WITHDRAWALS FUNCTION
-const withdrawals = movements.filter(mov => mov < 0)
-// Its the same process but with an arrow function instead just for practice
-
-
-// CURRENT BALANCE CALCULATOR
-
-const balance = movements.reduce((acc, cur) => acc + cur, 0)
-// acc= accumulator
-// cur = current value
