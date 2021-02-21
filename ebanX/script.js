@@ -79,11 +79,15 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 // BALANCE SECTION MANIPULATION
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
 
     containerMovements.innerHTML = ' '
     // This line deletes the actual content before editing the DOM 
-    movements.forEach(function (mov, i) {
+
+    // sorting
+    const movs = sort ? movements.slice().sort((a, b) => a - b) : movements
+
+    movs.forEach(function (mov, i) {
         const type = mov > 0 ? 'deposit' : 'withdrawal';
         // If the movements are bigger than zero then is deposit, else is withdrawal
         const html = `
@@ -101,10 +105,11 @@ const displayMovements = function (movements) {
 
 // CURRENT BALANCE CALCULATOR
 
-const calcDisplayBalance = function (movements) {
-    const balance = movements.reduce((acc, cur) => acc + cur, 0);
-    labelBalance.textContent = `${balance} €`
-    // acc= accumulator
+const calcDisplayBalance = function (acc) {
+    acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+    labelBalance.textContent = `${acc.balance} €`
+    // acc = account 
+    // acc,= accumulator
     // cur = current value  
 }
 
@@ -148,6 +153,17 @@ createUsernames(accounts)
 
 let currentAccount
 
+const updateUI = function (acc) {
+    // Display movements 
+    displayMovements(acc.movements)
+
+    // Display balance 
+    calcDisplayBalance(acc)
+
+    // Display summary 
+    calcDisplaySummary(acc)
+}
+
 btnLogin.addEventListener('click', function (e) {
     e.preventDefault()
     // This prevents the page from reloading, forms by default reload when submited 
@@ -169,18 +185,87 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = ''
     inputLoginPin.blur();
 
-    // Display movements 
-    displayMovements(currentAccount.movements)
-
-    // Display balance 
-    calcDisplayBalance(currentAccount.movements)
-
-    // Display summary 
-    calcDisplaySummary(currentAccount)
+    // Update UI
+    updateUI(currentAccount)
 
 })
 
+// TRANSFER MONEY
 
+btnTransfer.addEventListener('click', function (e) {
+    e.preventDefault()
+    const amount = Number(inputTransferAmount.value)
+    const receiverAcc = accounts.find(
+        acc => acc.username === inputTransferTo.value
+    );
+
+    inputTransferAmount.value = inputTransferTo.value = '';
+
+    if (amount > 0 &&
+        receiverAcc &&
+        currentAccount.balance >= amount &&
+        receiverAcc?.username !== currentAccount.username) {
+
+        // Transfer
+        currentAccount.movements.push(-amount)
+        receiverAcc.movements.push(amount)
+
+        // Update UI
+        updateUI(currentAccount)
+    }
+})
+
+
+// LOAN FEATURE
+
+btnLoan.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const amount = Number(inputLoanAmount.value)
+
+    // must have atleast 10% of the loan in the current balance
+    if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+        // Add movement
+        currentAccount.movements.push(amount)
+
+        // Update UI
+        updateUI(currentAccount)
+    }
+    inputLoanAmount.value = ' '
+})
+
+
+
+// DELETE ACCOUNT
+
+btnClose.addEventListener('click', function (e) {
+    e.preventDefault()
+    // to prevent it from loading again
+
+    if (
+        inputCloseUsername.value === currentAccount.username &&
+        Number(inputClosePin.value) === currentAccount.pin) {
+        const index = accounts.findIndex(
+            acc => acc.username === currentAccount.username
+        );
+        // Delete account 
+        accounts.splice(index, 1)
+
+        // Hide UI
+        containerApp.style.opacity = 0
+    }
+    inputCloseUsername.value = inputClosePin.value = ''
+});
+
+
+// SORTING ARRAY 
+let sorted = false
+
+btnSort.addEventListener('click', function (e) {
+    e.preventDefault()
+    displayMovements(currentAccount.movements, !sorted)
+    sorted = !sorted
+})
 
 
 
