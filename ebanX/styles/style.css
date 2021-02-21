@@ -71,6 +71,15 @@ nav {
   }
 }
 
+@media (min-width: 87.5em) {
+  nav {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-left: 30rem;
+    margin-right: 30rem;
+  }
+}
+
 nav .welcome {
   font-size: 1.5rem;
   font-weight: 500;
@@ -87,6 +96,7 @@ nav .login {
 }
 
 nav .login__input {
+  margin-top: 2rem;
   border: none;
   padding: 0.5rem 2rem;
   font-size: 1.6rem;
@@ -151,6 +161,9 @@ nav .login .btn--sort:focus {
       grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
   /* This creates the fade in/out anumation */
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 @media (max-width: 39.9375em) {
@@ -316,23 +329,42 @@ nav .login .btn--sort:focus {
 }
 
 .app .summary__label {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 0.8rem;
 }
 
+@media (min-width: 64em) {
+  .app .summary__label {
+    font-size: 1.2rem;
+  }
+}
+
 .app .summary__value {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-right: 2.5rem;
 }
 
+@media (min-width: 64em) {
+  .app .summary__value {
+    font-size: 1.2rem;
+  }
+}
+
 .app .summary__value--in, .app .summary__value--interest {
+  font-size: 1rem;
   color: #424746;
 }
 
+@media (min-width: 64em) {
+  .app .summary__value--in, .app .summary__value--interest {
+    font-size: 1.2rem;
+  }
+}
+
 .app .summary__value--out {
-  color: #bbb8b8;
+  color: #BF5B54;
 }
 
 .app .summary .btn--sort {
