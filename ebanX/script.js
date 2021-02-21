@@ -58,6 +58,7 @@ const labelSumInterest = document.querySelector('.summary__value--interest');
 const labelTimer = document.querySelector('.timer');
 
 const containerApp = document.querySelector('.app');
+const containerLogin = document.querySelector('.login');
 const containerMovements = document.querySelector('.movements');
 
 const btnLogin = document.querySelector('.login__btn');
@@ -186,6 +187,7 @@ const startLogOutTimer = function () {
             clearInterval(timer);
             labelWelcome.textContent = 'Log in to get started'
             containerApp.style.opacity = 0
+            containerLogin.style.opacity = 100
         }
 
         // Decrease by 1s
@@ -216,6 +218,7 @@ btnLogin.addEventListener('click', function (e) {
         // this takes the name of the current account and selects the first part of the Array, so the name 
     }
     containerApp.style.opacity = 100
+    containerLogin.style.opacity = 0
     // This turns the opacity from 0 % to 100 %
 
     // Clear input fields after login
@@ -302,6 +305,7 @@ btnClose.addEventListener('click', function (e) {
 
         // Hide UI
         containerApp.style.opacity = 0
+        containerLogin.style.opacity = 100
     }
     inputCloseUsername.value = inputClosePin.value = ''
 });
