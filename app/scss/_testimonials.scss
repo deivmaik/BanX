@@ -1,12 +1,24 @@
 
 .testimonials{
 
+    &__title{
+        padding-top: 5rem;
+        text-align: center;
+        font-size: $font-medium;
+        color: $blueishGrey;
+    }
+
+    .bg{
+        background-color: rgb(252, 246, 229);
+        border-radius: 0 0 5rem 5rem;
+
+    }
+    
     &__container{
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 3rem;
-        background-image: url(/img/86.png) ;
+        // background-image: url(/img/86.png) ;
         background-position: center bottom;
         background-size: 20%;
         background-repeat: no-repeat;
@@ -29,18 +41,31 @@
             align-items: center;
             text-align: center;
 
+            @include breakpoint-up(large){
+                flex-direction: row;
+                text-align: left;
+            }
+
             .slide__img{
                 width: 100%;
                 height: 100%;
                 margin: 0 auto;
                 padding: 4rem;
-                background-image: url(/img/42.png);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 30%;
+               
+
+                @include breakpoint-up(large){
+                    margin-left: -10rem;
+                    z-index: 0;
+                }
+
                 img{
                     height: 30rem;
                     width: auto;
+
+                    @include breakpoint-up(large){
+                        width: 30rem;
+                        height: auto;
+                    }
                 }
             }
 
@@ -51,18 +76,36 @@
                 align-items: center;
                 flex-direction: column;
 
+                @include breakpoint-up(medium){
+                    background-position: 10% top;
+                    background-size: 10rem;
+                    align-items: flex-start;
+                    margin: 0 8rem;
+                }
+                
                 .text{
                 color: black;
+                
                 }
 
                 .author{
                     font-size: small;
                     font-weight: bold;
 
+                    @include breakpoint-up(medium){
+                        padding-left: 22rem;
+                    }
+
+                    @include breakpoint-up(large){
+                        padding-left: 0rem;
+                    }
+
                     span{
                         font-weight: 300;
                         color: grey;
                     }
+
+                    
                 }
             }
         }
@@ -91,6 +134,12 @@
             background-color: white;
             overflow: hidden;
 
+            @include breakpoint-up(large){
+                top: 40rem;
+                transform: translate(0);
+                left : calc(100%-40rem)
+            }
+
             .prev,
             .next {
                 display: inline-block;
@@ -103,7 +152,7 @@
 
             .prev:hover,
             .next:hover {
-                background-color: antiquewhite;
+                background-color: whitesmoke;
             }
 
             .prev {
