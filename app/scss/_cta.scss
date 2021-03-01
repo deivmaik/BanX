@@ -1,9 +1,33 @@
 
 .cta{
-
+    text-align: center;
     &__container{
         height: 50vh;
         border-radius:  0 0 5rem 5rem;
-        background-color: white;
+        background: linear-gradient(180deg, #EBEFEE 0%, #FDEBE6 100%);
+
+        @include breakpoint-up(medium){
+            height: 27vh;
+        }
+
+        @include breakpoint-up(large){
+            height: 50vh;
+
+        }
     }
+
+    &__title{
+        padding-top: 5rem;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: $blueishGrey;
+        margin-bottom: 1rem;
+
+
+        @include breakpoint-up(large){
+            padding-top: 8.5rem;
+        }
+    }
+
 }

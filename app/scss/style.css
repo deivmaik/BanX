@@ -819,10 +819,42 @@ button:hover {
   background-image: url(/img/prev.svg);
 }
 
+.cta {
+  text-align: center;
+}
+
 .cta__container {
   height: 50vh;
   border-radius: 0 0 5rem 5rem;
-  background-color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EBEFEE), to(#FDEBE6));
+  background: linear-gradient(180deg, #EBEFEE 0%, #FDEBE6 100%);
+}
+
+@media (min-width: 40em) {
+  .cta__container {
+    height: 27vh;
+  }
+}
+
+@media (min-width: 64em) {
+  .cta__container {
+    height: 50vh;
+  }
+}
+
+.cta__title {
+  padding-top: 5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #2D3332;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 64em) {
+  .cta__title {
+    padding-top: 8.5rem;
+  }
 }
 
 .footer {
