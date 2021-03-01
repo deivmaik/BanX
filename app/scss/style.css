@@ -598,6 +598,10 @@ button:hover {
   }
 }
 
+.testimonials {
+  background-color: #FFF0F3;
+}
+
 .testimonials__title {
   padding-top: 5rem;
   text-align: center;
@@ -606,7 +610,8 @@ button:hover {
 }
 
 .testimonials .bg {
-  background-color: #fcf6e5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#F7F7F7));
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F7 100%);
 }
 
 .testimonials__container {
@@ -822,10 +827,15 @@ button:hover {
 
 .footer {
   margin-top: 2rem;
-  background-color: #FFCBBA;
   color: black;
   padding: 4rem;
   text-align: center;
+}
+
+@media (min-width: 64em) {
+  .footer {
+    height: 35vh;
+  }
 }
 
 @media (min-width: 40em) {

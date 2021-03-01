@@ -1,11 +1,15 @@
 
 .footer {
     margin-top: 2rem;
-    background-color: #FFCBBA;
+    // background-color: #FFCBBA;
     color: black;
     padding: 4rem;
     text-align: center;
 
+    @include breakpoint-up(large){
+    height: 35vh;
+
+    }
     .container{
         
         @include breakpoint-up(medium){
