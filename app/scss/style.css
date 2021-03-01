@@ -684,6 +684,7 @@ button:hover {
 .testimonials__slider .testimonials__slide .slide__img img {
   height: 30rem;
   width: auto;
+  border-radius: 2rem;
 }
 
 @media (min-width: 64em) {
@@ -1014,6 +1015,11 @@ button:hover {
 
 .footer__links a:hover {
   color: #FFF;
+}
+
+.footer__cta button {
+  background: -webkit-gradient(linear, left top, right top, from(#c9c7c5), to(#dadad6));
+  background: linear-gradient(90deg, #c9c7c5 0%, #dadad6 100%);
 }
 
 @media (max-width: 63.9375em) {

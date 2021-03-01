@@ -62,7 +62,7 @@
                 img{
                     height: 30rem;
                     width: auto;
-
+                    border-radius: 2rem;
                     @include breakpoint-up(large){
                         width: 30rem;
                         height: auto;
