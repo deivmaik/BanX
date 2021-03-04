@@ -858,6 +858,76 @@ button:hover {
   }
 }
 
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal__container {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EBEFEE), to(#FDEBE6));
+  background: linear-gradient(180deg, #EBEFEE 0%, #FDEBE6 100%);
+  text-align: center;
+  border-radius: 2rem;
+  width: 50%;
+  height: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal__container h3 {
+  padding-top: 2rem;
+  font-size: 1.8rem;
+}
+
+.modal__container .text--1 {
+  margin-top: 1rem;
+  color: black;
+  font-weight: 400;
+}
+
+.modal__container .text--2 {
+  margin-top: -3rem;
+  font-size: 1.2rem;
+  color: #272626;
+}
+
+.modal__container span {
+  font-size: 1.4rem;
+  color: black;
+}
+
+.modal__container .button {
+  margin-bottom: 2.5rem;
+}
+
+.modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .footer {
   margin-top: 2rem;
   color: black;
