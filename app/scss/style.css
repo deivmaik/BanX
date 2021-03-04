@@ -874,9 +874,14 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
+  transition: visibility 0s, opacity 0.5s;
 }
 
 .modal__container {
+  position: relative;
   background: -webkit-gradient(linear, left top, left bottom, from(#EBEFEE), to(#FDEBE6));
   background: linear-gradient(180deg, #EBEFEE 0%, #FDEBE6 100%);
   text-align: center;
@@ -921,6 +926,15 @@ button:hover {
 
 .modal__container .button {
   margin-bottom: 2.5rem;
+}
+
+.modal__container--close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: grey;
 }
 
 .modal--active {

@@ -59,3 +59,17 @@ function prevSlide() {
 
 next.addEventListener('click', nextSlide);
 prev.addEventListener('click', prevSlide);
+
+// Sign up modal
+
+const modalBtn = document.querySelector('.hero__cta')
+const modal = document.querySelector('.modal')
+const modalClose = document.querySelector('.modal__container--close')
+
+modalBtn.addEventListener('click', function () {
+    modal.classList.add('modal--active')
+})
+
+modalClose.addEventListener('click', function () {
+    modal.classList.remove('modal--active')
+})

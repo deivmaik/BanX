@@ -9,11 +9,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // visibility: hidden;
-    // opacity: 0;
-    // transition: visibility 0s opacity 0,5s;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+
+    
 
     &__container{
+        position: relative;
         background: linear-gradient(180deg, #EBEFEE 0%, #FDEBE6 100%);
         text-align: center;
         border-radius: 2rem;
@@ -48,6 +51,15 @@
 
         .button{
             margin-bottom: 2.5rem;
+        }
+
+        &--close{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: grey;
         }
     }
 
