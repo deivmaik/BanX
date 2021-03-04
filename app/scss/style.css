@@ -902,9 +902,24 @@ button:hover {
           flex-direction: column;
 }
 
+@media (max-width: 39.9375em) {
+  .modal__container {
+    width: 85%;
+    height: 40%;
+  }
+}
+
 .modal__container h3 {
   padding-top: 2rem;
   font-size: 1.8rem;
+}
+
+@media (max-width: 39.9375em) {
+  .modal__container h3 {
+    padding-top: 7rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .modal__container .text--1 {
@@ -913,10 +928,24 @@ button:hover {
   font-weight: 400;
 }
 
+@media (max-width: 39.9375em) {
+  .modal__container .text--1 {
+    margin-top: 0rem;
+  }
+}
+
 .modal__container .text--2 {
   margin-top: -3rem;
   font-size: 1.2rem;
   color: #272626;
+}
+
+@media (max-width: 39.9375em) {
+  .modal__container .text--2 {
+    margin-top: -3rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 .modal__container span {
@@ -926,6 +955,12 @@ button:hover {
 
 .modal__container .button {
   margin-bottom: 2.5rem;
+}
+
+@media (max-width: 39.9375em) {
+  .modal__container .button {
+    margin-bottom: 7rem;
+  }
 }
 
 .modal__container--close {
