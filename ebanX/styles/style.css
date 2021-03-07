@@ -160,7 +160,7 @@ nav .login .btn--sort:focus {
   -ms-grid-rows: auto (15rem)[3] auto;
       grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
-  /* This creates the fade in/out anumation */
+  /* This creates the fade in/out animation */
   opacity: 0;
   -webkit-transition: all 1s;
   transition: all 1s;
@@ -364,7 +364,7 @@ nav .login .btn--sort:focus {
 }
 
 .app .summary__value--out {
-  color: #BF5B54;
+  color: #bf5b54;
 }
 
 .app .summary .btn--sort {
@@ -417,13 +417,13 @@ nav .login .btn--sort:focus {
   transition: all 0.3s;
 }
 
-.app .operation--transfer .form__input input[type=number]::-webkit-outer-spin-button,
-.app .operation--transfer .form__input input[type=number]::-webkit-inner-spin-button {
+.app .operation--transfer .form__input input[type="number"]::-webkit-outer-spin-button,
+.app .operation--transfer .form__input input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.app .operation--transfer .form__input input[type=number] {
+.app .operation--transfer .form__input input[type="number"] {
   -moz-appearance: textfield;
 }
 
