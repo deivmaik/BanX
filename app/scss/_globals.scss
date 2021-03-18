@@ -1,10 +1,16 @@
 html {
     font-size:  62.5%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
+}
+
+header{
+    position: sticky;
 }
 
 body {
@@ -153,6 +159,7 @@ button,
     color: $white;
     font-weight: bold;
     transition: opacity 300ms ease-in-out;
+    outline: invert;
 
     &.hero__cta {
         padding: 1.5rem 3rem; 
