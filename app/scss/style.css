@@ -219,7 +219,8 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
-button {
+button,
+.button {
   display: inline-block;
   padding: 1rem 3rem;
   background: -webkit-gradient(linear, left top, right top, from(#EDB541), to(#FFCA5C));
@@ -234,11 +235,13 @@ button {
   transition: opacity 300ms ease-in-out;
 }
 
-button.hero__cta {
+button.hero__cta,
+.button.hero__cta {
   padding: 1.5rem 3rem;
 }
 
-button:hover {
+button:hover,
+.button:hover {
   opacity: 0.5;
 }
 
