@@ -26,6 +26,9 @@ hamburger.addEventListener('click', function () {
     }
 })
 
+document.getElementById('overlay').onclick = function(event) {
+    document.getElementById('overlay').className = "hidden";
+}
 
 // Testimonials
 
