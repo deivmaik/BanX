@@ -1,6 +1,7 @@
 # BanX
 
 BanX,  A new kind of digital banking
+https://banx.netlify.app/
 
 ## Process
 
